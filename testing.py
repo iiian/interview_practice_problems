@@ -1,10 +1,10 @@
 def test_case(description, actual, expectation):
-    print(description)
+    # print(description)
     if actual != expectation:
-        print(f'❌ failed, expected {expectation}, but got {actual}')
+        # print(f'❌ failed, expected {expectation}, but got {actual}')
         return False
     else:
-        print(f'✔ passed')
+        # print(f'✔ passed')
         return True
 
 class TestSuite:
