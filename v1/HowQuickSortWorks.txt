@@ -1,0 +1,104 @@
+
+⬛ 🟦 🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+⬛ 🟥 🟦 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 ⬛ 🟦 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 ⬛ 🟥 🟦 🟦 🟦 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 ⬛ 🟦 🟦 🟦 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 ⬛ 🟥 🟦 🟦 🟦 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 ⬛ 🟦 🟦 🟦 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 ⬛ 🟥 🟦 🟦 🟦 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 🟥 ⬛ 🟦 🟦 🟦 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 🟥 ⬛ 🟥 🟦 🟦 🟦 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 🟥 🟥 ⬛ 🟦 🟦 🟦 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 🟥 🟥 ⬛ 🟥 🟦 🟦 🟦 🟦 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 🟥 🟥 🟥 ⬛ 🟦 🟦 🟦 🟦 🟦 🟥 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 🟥 🟥 🟥 ⬛ 🟥 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 🟥 🟥 🟥 🟥 ⬛ 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟥
+🟥 🟥 🟥 🟥 🟥 🟥 🟥 ⬛ 🟥 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦
+🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 ⬛ 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦
+
+we could reduce the net travel of the black pivot 
+if we track the middle point between reds and blues.
+
+h = last_red from left (or just black if nothing else black)
+⬛ 🟥 🟥h🟥x🟦 🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+          
+⬛ 🟥 🟥h🟥 🟦x🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                                                          swp(h+1, x); h = h + 1; x += 1
+⬛ 🟥 🟥 🟥h🟥 🟦x🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                
+⬛ 🟥 🟥 🟥h🟥 🟦 🟦x🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                  
+⬛ 🟥 🟥 🟥h🟥 🟦 🟦 🟦x🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                                                          swp(h+1, x); h = h + 1; x += 1
+⬛ 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦x🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                                                          swp(h+1, x); h = h + 1; x += 1
+⬛ 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦x🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                                                          swp(h+1, x); h = h + 1; x += 1
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦x🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                                                          swp(h+1, x); h = h + 1; x += 1
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦x🟦 🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                               
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦 🟦x🟥 🟦 🟥 🟦 🟦 🟦 🟥
+                                                          swp(h+1, x); h = h + 1; x += 1
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦 🟦x🟦 🟥 🟦 🟦 🟦 🟥
+                                    
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦 🟦 🟦x🟥 🟦 🟦 🟦 🟥
+                                                          swp(h+1, x); h = h + 1; x += 1
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦 🟦 🟦x🟦 🟦 🟦 🟥
+                                          
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦 🟦 🟦 🟦x🟦 🟦 🟥
+                                            
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦 🟦 🟦 🟦 🟦x🟦 🟥
+                                               
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦x🟥
+                                                          swp(h+1, x); h = h + 1; x += 1
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥h🟥 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦x .
+END: swp(0, h)
+🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥h⬛ 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦x .
+
+===============================================================
+⬛b🟥 🟥 🟥 🟦 🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦r🟥
+
+⬛ 🟥b🟥 🟥 🟦 🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦r🟥
+
+⬛ 🟥 🟥b🟥 🟦 🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦r🟥
+
+⬛ 🟥 🟥 🟥b🟦 🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦r🟥  
+                                                        SWP(b,r)
+⬛ 🟥 🟥 🟥b🟥 🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦 🟦r🟦
+
+⬛ 🟥 🟥 🟥 🟥b🟥 🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦 🟦r🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥b🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥 🟦r🟦 🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥b🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦 🟥r🟦 🟦 🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥b🟦 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦r🟥 🟦 🟦 🟦 🟦
+                                                        SWP(b,r)
+⬛ 🟥 🟥 🟥 🟥 🟥b🟥 🟦 🟥 🟥 🟥 🟥 🟦 🟥 🟦r🟦 🟦 🟦 🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥b🟦 🟥 🟥 🟥 🟥 🟦 🟥r🟦 🟦 🟦 🟦 🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥b🟦 🟥 🟥 🟥 🟥 🟦r🟥 🟦 🟦 🟦 🟦 🟦 🟦
+                                                        SWP(b,r)
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥b🟥 🟥 🟥 🟥 🟥 🟦r🟦 🟦 🟦 🟦 🟦 🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥b🟥 🟥 🟥 🟥r🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥b🟥 🟥r🟥 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥b🟥r🟥 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦
+
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥r🟥 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦
+                            b
+⬛ 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥r🟥b🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦  -- note that the red cursor will always wait ON A RED
+                                                        for the blue cursor to show up at a blue.
+🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 🟥 ⬛ 🟦 🟦 🟦 🟦 🟦 🟦 🟦 🟦    HOWEVER!! At the end of iteration, the blue cursor
+                                                        WILL show up at r + 1, because b had to have come
+                                                        from the left, and therefore had to have stood ON
+                                                        the last red (where the red iterator now sits).
+
+                                                        therefore, since we took our pivot to be on the rhs,
+                                                        the only element that can acceptably trade places
+                                                        with it is the red iterator, which came from the right.
